@@ -13,7 +13,7 @@ const NewComp = () => {
         <div className="armaan" sx={{ flexGrow: 1 }}>
           <Dashboard></Dashboard>
         </div>
-        <div>Item 2</div>
+        <div>Ifaf</div>
         <div>Item 3</div>
       </Box>
     </div>

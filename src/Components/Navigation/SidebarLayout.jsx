@@ -35,7 +35,7 @@ function SidebarLayout(props) {
   };
 
   const drawer = (
-    <div>
+    <div className='layoutCss'>
         <img src="https://logos-download.com/wp-content/uploads/2021/01/Free_Fire_Logo.png" style={{ width:'200px',margin:'20px' }} alt="fnajf" />
    
 
@@ -57,27 +57,6 @@ function SidebarLayout(props) {
         }}
       >
     <BasicMenu></BasicMenu>
-        {/* <Toolbar className='toolbar'>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            
-          </Box>
-        </Toolbar> */}
       </AppBar>
       <Box
         component="nav"
@@ -104,7 +83,7 @@ function SidebarLayout(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth,background:'#1e1e2d' },
           }}
           open
         >

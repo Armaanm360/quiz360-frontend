@@ -3,3 +3,16 @@
   background: #fff;
   padding: 20px;
 }
+
+.layoutCss {
+  background-color: #1e1e2d;
+  color: #9D9DA6;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+  color: #9D9DA6;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+  color: rgba(255, 255, 255, 0.54)!important;
+}

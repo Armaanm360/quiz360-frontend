@@ -12,9 +12,11 @@ import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
-import { AccessTime, AccountBalanceWallet, AccountCircle, AddCard, AddTask, CreditCard, InsertInvitation, LibraryBooks, ManageHistory } from '@mui/icons-material';
+import { AccessTime, AccountBalanceWallet, AccountCircle, AddCard, AddTask, AnalyticsSharp, CreditCard, DynamicForm, InsertInvitation, LibraryBooks, ManageHistory, PunchClockSharp, ThumbsUpDownSharp, VerifiedSharp, VerifiedUserSharp } from '@mui/icons-material';
 import Apon from '../../Layout/Apon';
 import { Link } from 'react-router-dom';
+import '../SidebarLayout.css'
+
 
 
 const MenuWithIcon = () => {
@@ -26,7 +28,7 @@ const MenuWithIcon = () => {
 
   return (
         <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+      sx={{ width: '100%', maxWidth: 360 }}
       component="nav"
       aria-labelledby="nested-list-subheader"
     >
@@ -48,9 +50,9 @@ const MenuWithIcon = () => {
       
       >
         <ListItemIcon>
-          <AccountCircle />
+          <ManageHistory />
         </ListItemIcon>
-        <ListItemText primary="Employees" />
+        <ListItemText primary="User Management" />
       </ListItemButton>
 
       <ListItemButton 
@@ -58,11 +60,11 @@ const MenuWithIcon = () => {
        to="/attendence"
       >
         <ListItemIcon>
-          <InsertInvitation />
+          <DynamicForm />
         </ListItemIcon>
-        <ListItemText primary="Attendence" />
+        <ListItemText primary="Quiz Management" />
       </ListItemButton>
-      <ListItemButton onClick={handleClick}>
+      {/* <ListItemButton onClick={handleClick}>
         <ListItemIcon>
           <AccessTime />
         </ListItemIcon>
@@ -78,51 +80,42 @@ const MenuWithIcon = () => {
             <ListItemText primary="Starred" />
           </ListItemButton>
         </List>
-      </Collapse>
+      </Collapse> */}
       <ListItemButton
       component={Link}
        to="/payruns"
       >
         <ListItemIcon>
-          <AddCard />
+          <AnalyticsSharp />
         </ListItemIcon>
-        <ListItemText primary="Pay Runs" />
+        <ListItemText primary="Analytics and reporting" />
       </ListItemButton>
       <ListItemButton  
        component={Link}
        to="/approvals"
        >
         <ListItemIcon>
-          <AddTask />
+          <PunchClockSharp />
         </ListItemIcon>
-        <ListItemText primary="Approvals" />
+        <ListItemText primary="Quiz scheduling" />
       </ListItemButton>
       <ListItemButton
        component={Link}
        to="/salarydetails"
       >
         <ListItemIcon>
-          <ManageHistory />
+          <ThumbsUpDownSharp />
         </ListItemIcon>
-        <ListItemText primary="Salary Details" />
+        <ListItemText primary="Feedback and support" />
       </ListItemButton>
       <ListItemButton
       component={Link}
        to="/investments"
       >
         <ListItemIcon>
-          <AccountBalanceWallet />
+          <VerifiedUserSharp />
         </ListItemIcon>
-        <ListItemText primary="Investments" />
-      </ListItemButton>
-      <ListItemButton 
-      component={Link}
-       to="/reports"
-      >
-        <ListItemIcon>
-          <LibraryBooks />
-        </ListItemIcon>
-        <ListItemText primary="Reports" />
+        <ListItemText primary="Data security and privacy" />
       </ListItemButton>
     </List>
 
