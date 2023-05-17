@@ -12,6 +12,7 @@ import TimeClock from './Pages/TimeClock/TimeClock';
 import Reports from './Pages/Reports/Reports';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/AuthPages/Login';
+import Ngo from './Pages/Ngo/Nog';
 
 function App() {
   const router = createBrowserRouter([
@@ -53,6 +54,10 @@ function App() {
       {
       path:"/reports",
       element:<Reports></Reports>
+      },
+      {
+      path:"/ngo",
+      element:<Ngo></Ngo>
       },
       ]
     },

@@ -64,6 +64,15 @@ const MenuWithIcon = () => {
         </ListItemIcon>
         <ListItemText primary="Quiz Management" />
       </ListItemButton>
+      <ListItemButton 
+      component={Link}
+       to="/ngo"
+      >
+        <ListItemIcon>
+          <DynamicForm />
+        </ListItemIcon>
+        <ListItemText primary="NGO" />
+      </ListItemButton>
       {/* <ListItemButton onClick={handleClick}>
         <ListItemIcon>
           <AccessTime />
