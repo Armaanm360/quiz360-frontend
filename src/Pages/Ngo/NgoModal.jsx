@@ -57,11 +57,17 @@ const style = {
 
 
   //employee
-  const [employee, setEmployee] = useState(null);
-  const [postition, setPostition] = useState(null);
-  const [salary, setSalary] = useState(null);
+  const [ngoarea, setNgoarea] = useState(null);
+  const [ngousername, setNgousername] = useState(null);
+  const [ngoname, setNgoname] = useState(null);
+  const [ngoemail, setNgemail] = useState(null);
+  const [ngopassword, setNgopassword] = useState(null);
+  const [ngoaddress, setNgoaddress] = useState(null);
+
 
   const stringRegex = /^([ \u00c0-\u01ffa-zA-Z'\-])+$/;
+
+  
 
 
   const onChangeArea = (event)=>{
@@ -84,7 +90,103 @@ const style = {
 
 
 
-    // const newNgo = {
+
+ if (area_id.trim() === '') {
+      setNgoarea('Please Insert Ngo Area');
+
+      return toast.error(ngoarea, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+
+    else if (username.trim() === '') {
+      setNgousername('Please Insert Ngo Username');
+
+      return toast.error(ngousername, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+   else if (name.trim() === '') {
+      setNgoname('Please Enter name');
+
+      return toast.error(ngoname, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+   else if (address.trim() === '') {
+      setNgoaddress('Please Enter Address');
+
+      return toast.error(ngoaddress, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+   else if (email.trim() === '') {
+      setNgemail('Please Enter Email');
+
+      return toast.error(ngoemail, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+   else if (password.trim() === '') {
+      setNgopassword('Please Enter password');
+
+      return toast.error(ngopassword, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+    
+    
+    
+    
+    else{
+      const resp = await axios.post('http://192.168.0.227/myPractisebackend/api/create-ngo',{
+area_id,username,name,email,password,address
+     })
+
+
+         // const newNgo = {
       
     // }
 
@@ -98,10 +200,6 @@ const style = {
       //   console.error(error);
       // });
 
-
-const resp = await axios.post('http://192.168.0.227/myPractisebackend/api/create-ngo',{
-area_id,username,name,email,password,address
-     })
 
 
      
@@ -119,36 +217,7 @@ area_id,username,name,email,password,address
      setOpen(false)
     // setOpen(false);
     toast.success("New Employee Created")
-
-
-  //   if (areaID.trim() === '') {
-  //     setEmployee('Please Enter Employee Name');
-
-  //     return toast.error(employee, {
-  //       position: "top-right",
-  //       autoClose: 5000,
-  //       hideProgressBar: true,
-  //       closeOnClick: true,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "light",
-  //     });
-  //   }
-  //  else if (userName.trim() === '') {
-  //     setPostition('Please Enter Postition');
-
-  //     return toast.error(postition, {
-  //       position: "top-right",
-  //       autoClose: 5000,
-  //       hideProgressBar: true,
-  //       closeOnClick: true,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "light",
-  //     });
-  //   }
+    }
   //  else if (userEmail.trim() === '') {
   //     setSalary('Please Enter Salary');
 

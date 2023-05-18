@@ -50,27 +50,28 @@ const Ngo = () => {
   
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+<Box>
+      <Paper elevation={8}sx={{my:3}}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell> <h2 color="secondary">Ngo List</h2></TableCell>
-            <TableCell align="right"></TableCell>
-            <TableCell align="right"></TableCell>
-            <TableCell align="right"></TableCell>
+            <TableCell> <h2 color="secondary">All Ngo List</h2></TableCell>
             <TableCell align="right"><Button onClick={handleOpen} variant="contained">Create Ngo</Button></TableCell>
           </TableRow>
         </TableHead>
       </Table>
-       <h3>{user.email}</h3>
-        <h3>{user.name}</h3>
+    </Paper>
+    <TableContainer component={Paper} elevation={18} sx={{my:3}}>
+             {/* <h3>{user.email}</h3>
+        <h3>{user.name}</h3> */}
+
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
+        <TableHead sx={{ bgcolor: 'primary.main', p: 2 }}>
           <TableRow>
-            <TableCell>Ngo Name</TableCell>
-            <TableCell align="right">Ngo Username</TableCell>
-            <TableCell align="right">Ngo Address</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell style={{ color:'#fff' }} >Ngo Name</TableCell>
+            <TableCell style={{ color:'#fff' }} align='right'>Ngo Username</TableCell>
+            <TableCell style={{ color:'#fff' }} align='left'>Ngo Address</TableCell>
+            <TableCell style={{ color:'#fff' }} align='center' >Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -83,8 +84,10 @@ const Ngo = () => {
                 {ngos.name}
               </TableCell>
               <TableCell align="right">{ngos.username} || {ngos.id}</TableCell>
-              <TableCell align="right">{ngos.address}</TableCell>
-              <TableCell align="right">meow</TableCell>
+              <TableCell align="left">{ngos.address}</TableCell>
+              <TableCell align="center">
+                <Button variant="outlined" component={Link} to={`/ngo/${ngos.id}`}>View</Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -107,6 +110,7 @@ const Ngo = () => {
       
     <NgoModal open={open} setNgo={setNgo} ngo={ngo} setOpen={setOpen} handleClose={handleClose} ></NgoModal>
     </TableContainer>
+    </Box>
 
 
 

@@ -13,6 +13,7 @@ import Reports from './Pages/Reports/Reports';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/AuthPages/Login';
 import Ngo from './Pages/Ngo/Nog';
+import SingleNgo from './Pages/Ngo/SingleNgo';
 
 function App() {
   const router = createBrowserRouter([
@@ -59,6 +60,15 @@ function App() {
       path:"/ngo",
       element:<Ngo></Ngo>
       },
+      {
+      path:'ngo/:singledetail',
+      loader:async({params})=>{
+        // console.log(params.singledetail);
+       return fetch(`http://192.168.0.227/myPractisebackend/api/single-ngo/${params.singledetail}`);
+
+      },
+      element:<SingleNgo></SingleNgo>
+    }
       ]
     },
      {
